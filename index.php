@@ -1,13 +1,13 @@
 <?php 
 // include phpmailer class
-require_once 'mypham/mailer/class.phpmailer.php';
+require_once 'mailer/class.phpmailer.php';
 // creates object
 $mail = new PHPMailer(true);	
 
 if(isset($_POST['btn_send']))
 {	
 
-	$subject    = "anthanglongtrach.com";
+	$subject = "anthanglongtrach.com";
 	$message = "Họ tên : <b>".$_POST['fullname']."</b><br>";
 	$message.= "Số ĐT : <b>".$_POST['email']."</b><br>";
 	$message.= "Nội dung : <b>".$_POST['content']."</b><br>";
@@ -17,17 +17,15 @@ if(isset($_POST['btn_send']))
 	try
 	{
 		$mail->IsSMTP(); 
-		$mail->isHTML(true);
-		$mail->SMTPDebug  = 0;                     
-		$mail->SMTPAuth   = true;                  
-		$mail->SMTPSecure = "ssl";                 
-		$mail->Host       = "smtp.gmail.com";      
-		$mail->Port       = 465;             
+		$mail->isHTML(true);		
+		$mail->Host = 'smtp.gmail.com';
+		$mail->Port = 587;
+		$mail->SMTPSecure = 'tls';
+		$mail->SMTPAuth = true;
 		$mail->AddAddress('blogbui.com@gmail.com');
-		$mail->Username   ="blogbui.com@gmail.com";  
-		$mail->Password   ="f1234567";            
-		$mail->SetFrom('blogbui.com@gmail.com','anthanglongtrach.com');
-		$mail->AddReplyTo("blogbui.com@gmail.com","anthanglongtrach.com");
+		$mail->Username   ="web.0917492306@gmail.com";  
+		$mail->Password   ="ilgvmukmodrwisji";            
+		$mail->SetFrom('web.0917492306@gmail.com','Admin');		
 		$mail->Subject    = $subject;
 		$mail->Body 	  = $message;
 		$mail->AltBody    = $message;
@@ -47,31 +45,21 @@ if(isset($_POST['btn_send']))
 	}
 }	
 
-?><!--
-
-
+?>
 <!DOCTYPE html>
 <html>
-
-<!-- Mirrored from vtn.chocoslim.pro/preview/?preland_name=Chocolate_Slim_VN&offer_id=7000 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Aug 2018 08:46:20 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head><!-- [pre]land_id =  -->
-<script>var acrum_extra = {"id":13591,"type":"landing","ccodes":["VN"],"offer_id":7000,"esub":"-7EBRQCgQAAAEvA1gbAzsoMxc1rgEAAw9euoNbEREKEQkKEQ1CEQ1aAAF_YWRjb21ib_85NzJmYjQ0NAADNTI","location":[10.8142,106.6438],"ip_city":"Ho Chi Minh City"};</script>
-
-
-
-
-<!--suppress ES6ConvertVarToLetConst -->
 <script>var lang_locale = "en";</script>   <!-- browser locale -->
 <script type="text/javascript"> var ccode = "VN"; var ip_ccode = "VN"; var package_prices = {}; var shipment_price = 0; var name_hint = "Phạm Xuân"; var phone_hint = "+84917989737"; var iew = false; var offer_countries = {"VN":"Vi\u1ec7t Nam"}; </script>
-<script type="text/javascript" src="../../mypham/style/js/jquery-1.12.4.min.js"></script>
-<script type="text/javascript" src="../../mypham/style/js/placeholders-3.0.2.min.js"></script>
-<script type="text/javascript" src="../../mypham/style/js/moment-with-locales-2.18.1.min.js"></script>
-<script type="text/javascript" src="../../mypham/style/js/dr-dtime.js"></script>
-<script type="text/javascript" src="../../mypham/style/js/order_me.js"></script>
-<link type="text/css" href="../../mypham/style/css/order_me.css" rel="stylesheet" media="all">
-<script type="text/javascript" src="../../mypham/style/js/validation.js"></script>
-<script type="text/javascript" src="../../mypham/style/js/video_avid.js"></script>
+<script type="text/javascript" src="style/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="style/js/placeholders-3.0.2.min.js"></script>
+<script type="text/javascript" src="style/js/moment-with-locales-2.18.1.min.js"></script>
+<script type="text/javascript" src="style/js/dr-dtime.js"></script>
+<script type="text/javascript" src="style/js/order_me.js"></script>
+<link type="text/css" href="style/css/order_me.css" rel="stylesheet" media="all">
+<script type="text/javascript" src="style/js/validation.js"></script>
+<script type="text/javascript" src="style/js/video_avid.js"></script>
 
 <style>
     .ac_footer {
@@ -96,22 +84,13 @@ if(isset($_POST['btn_send']))
     }
 
 </style>
-<!--retarget-->
-
-<!--retarget-->
-
-
-
-
-
-
 <meta content="width=device-width, height=device-height, initial-scale=1.0" name="viewport"/>
 <meta charset="utf-8"/>
 <meta content="telephone=no" name="format-detection"/>
 <title>Chocolate Slim</title>
-<link href="../../mypham/boottrap/css/css3.css" rel="stylesheet" type="text/css"/>
+<link href="boottrap/css/css3.css" rel="stylesheet" type="text/css"/>
 <link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet"/>
-<script src="../../mypham/boottrap/js/main.js" type="text/javascript"></script>
+<script src="boottrap/js/main.js" type="text/javascript"></script>
 </head>
 <body><!--retarget-->
 
@@ -149,21 +128,21 @@ if(isset($_POST['btn_send']))
 <div class="item">
 <div>
 <span></span>
-<img alt="" src="../../mypham/boottrap/images/ico3.jpg"/>
+<img alt="" src="boottrap/images/ico3.jpg"/>
 </div>
 <p>Pha vào tách</p>
 </div>
 <div class="item">
 <div>
 <span></span>
-<img alt="" src="../../mypham/boottrap/images/ico2.jpg"/>
+<img alt="" src="boottrap/images/ico2.jpg"/>
 </div>
 <p>Uống buổi sáng</p>
 </div>
 <div class="item">
 <div>
 <span></span>
-<img alt="" src="../../mypham/boottrap/images/ico1.jpg"/>
+<img alt="" src="boottrap/images/ico1.jpg"/>
 </div>
 <p>Trong vòng 2-4 tuần</p>
 </div>
@@ -186,7 +165,7 @@ if(isset($_POST['btn_send']))
 				</div>
 <h2>6 thành phần tự nhiên</h2>
 <div class="item first">
-<img alt="" src="../../mypham/boottrap/images/img1.png"/>
+<img alt="" src="boottrap/images/img1.png"/>
 <div class="message">
 <div>Canxi</div>
 <p>
@@ -196,7 +175,7 @@ if(isset($_POST['btn_send']))
 </div>
 </div>
 <div class="item first right">
-<img alt="" src="../../mypham/boottrap/images/img2.png"/>
+<img alt="" src="boottrap/images/img2.png"/>
 <div class="message">
 <div>Sắt</div>
 <p>
@@ -207,7 +186,7 @@ if(isset($_POST['btn_send']))
 </div>
 <div class="clear"></div>
 <div class="item second">
-<img alt="" src="../../mypham/boottrap/images/img3.png"/>
+<img alt="" src="boottrap/images/img3.png"/>
 <div class="message">
 <div>Phốt pho</div>
 <p>
@@ -218,7 +197,7 @@ if(isset($_POST['btn_send']))
 </div>
 </div>
 <div class="item second right">
-<img alt="" src="../../mypham/boottrap/images/img4.png"/>
+<img alt="" src="boottrap/images/img4.png"/>
 <div class="message">
 <div>Loại vitamin A</div>
 <p>
@@ -230,7 +209,7 @@ if(isset($_POST['btn_send']))
 </div>
 <div class="clear"></div>
 <div class="item third">
-<img alt="" src="../../mypham/boottrap/images/img5.png"/>
+<img alt="" src="boottrap/images/img5.png"/>
 <div class="message">
 <div>ca cao</div>
 <p>
@@ -240,7 +219,7 @@ if(isset($_POST['btn_send']))
 </div>
 </div>
 <div class="item third right">
-<img alt="" src="../../mypham/boottrap/images/img6.png"/>
+<img alt="" src="boottrap/images/img6.png"/>
 <div class="message">
 <div>loại vitamin B1, B2</div>
 <p> Bình thường hóa quá trình chuyển hóa chất béo. Cải thiện chức năng toàn bộ hệ thống cơ thể. Làm giảm lượng cholesterol
@@ -258,23 +237,23 @@ if(isset($_POST['btn_send']))
 <div class="title">Kết quả: Mang đến mọi người vóc dáng thon gọn hơn cùng với Chocolate Slim!</div>
 <h2>Trên 7.000 nữ giới cảm thấy hạnh phúc khi đã giảm cân!</h2>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/img7.jpg"/>
+<img alt="" src="boottrap/images/img7.jpg"/>
 <p>Đốt cháy mỡ thừa trong chốc lát</p>
 </div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/img8.jpg"/>
+<img alt="" src="boottrap/images/img8.jpg"/>
 <p>Bạn không muốn dùng bữa</p>
 </div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/img9.jpg"/>
+<img alt="" src="boottrap/images/img9.jpg"/>
 <p>Bạn ngập tràn năng lượng</p>
 </div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/img10.jpg"/>
+<img alt="" src="boottrap/images/img10.jpg"/>
 <p>Không còn cảm giác thèm đồ ngọt</p>
 </div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/img11.jpg"/>
+<img alt="" src="boottrap/images/img11.jpg"/>
 <p>Tâm trạng thư thái</p>
 </div>
 <div class="clear"></div>
@@ -338,7 +317,7 @@ if(isset($_POST['btn_send']))
 <div class="title">Cùng đặt câu hỏi với những người đã giảm cân cùng Chocolate Slim</div>
 <h2>Người thực - công dụng thực!</h2>
 <div class="review">
-<img alt="" src="../../mypham/boottrap/images/ava1.jpg"/>
+<img alt="" src="boottrap/images/ava1.jpg"/>
 <div class="date">
 <div>
 <script>
@@ -360,7 +339,7 @@ if(isset($_POST['btn_send']))
 					</p>
 </div>
 <div class="review center">
-<img alt="" src="../../mypham/boottrap/images/ava2.jpg"/>
+<img alt="" src="boottrap/images/ava2.jpg"/>
 <div class="date">
 <div>
 <script>
@@ -380,7 +359,7 @@ if(isset($_POST['btn_send']))
 					</p>
 </div>
 <div class="review">
-<img alt="" src="../../mypham/boottrap/images/ava3.jpg"/>
+<img alt="" src="boottrap/images/ava3.jpg"/>
 <div class="date">
 <div>
 <script>
@@ -444,15 +423,15 @@ if(isset($_POST['btn_send']))
 <div class="width">
 <div class="title">Cách thức đặt mua Chocolate Slim?</div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/ico4.jpg"/>
+<img alt="" src="boottrap/images/ico4.jpg"/>
 <p>Điền vào biểu mẫu trên trang web của chúng tôi</p>
 </div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/ico5.jpg"/>
+<img alt="" src="boottrap/images/ico5.jpg"/>
 <p>Chờ cuộc gọi từ nhân viên hỗ trợ bán hàng</p>
 </div>
 <div class="item">
-<img alt="" src="../../mypham/boottrap/images/ico6.jpg"/>
+<img alt="" src="boottrap/images/ico6.jpg"/>
 <p>Nhận gói hàng
 						<span class="del_office">ở khu vực bưu điện gần nhất</span>
 </p>
@@ -468,21 +447,21 @@ if(isset($_POST['btn_send']))
 <h2>Sử dụng
 						<b>Chocolate Slim</b> dễ dàng hơn bao giờ hết!</h2>
 <div class="hu_step">
-<img src="../../mypham/boottrap/images/hu_step1.jpg"/>
+<img src="boottrap/images/hu_step1.jpg"/>
 <p class="hu_title">CHUẨN BỊ</p>
 <p>
 <b>Làm cocktail mỗi sáng với 250 ml nước uống</b>, hòa 1-2 muỗng hỗn hợp cho nữ giới và 2-3 muỗng hỗn hợpcho nam giới.
 							</p>
 </div>
 <div class="hu_step">
-<img src="../../mypham/boottrap/images/hu_step2.jpg"/>
+<img src="boottrap/images/hu_step2.jpg"/>
 <p class="hu_title">DÙNG</p>
 <p>
 <b>DÙNG cocktail đã chuẩn bị thay cho bữa ăn sáng</b>, và cơ thể bạn sẽ nhận: 91 kcal, 10g carbohydrate, 17g protein,
 							23 nguyên tố vi lượng cùng vitamin và chất xơ. </p>
 </div>
 <div class="hu_step">
-<img src="../../mypham/boottrap/images/hu_step3.jpg"/>
+<img src="boottrap/images/hu_step3.jpg"/>
 <p class="hu_title">LẶP LẠI</p>
 <p>Trong cả ngày
 							<b>thay thế các bữa ăn khác bằng ly cocktail nói trên</b> để tăng thêm tính công hiệu. </p>
@@ -499,7 +478,7 @@ if(isset($_POST['btn_send']))
 <div class="left">
 <h1>Chocolate Slim</h1>
 <h2>Hợp chất giảm béo tự nhiên</h2>
-<img alt="" class="prod" src="../../mypham/boottrap/images/prod.png"/>
+<img alt="" class="prod" src="boottrap/images/prod.png"/>
 <div class="hidden_upsale" style="visibility: visible">
 <div class="sale">Ưu đãi sản phẩm giảm cân! Giảm giá 50%!</div>
 </div>
@@ -523,7 +502,6 @@ if(isset($_POST['btn_send']))
 </div>
 </div>
 </div>
-<script type="text/javascript" src="../../mypham/dadbab.info/content/shared/js/js.cookie.min.js"></script>
 <script>
     $(document).ready(function () {
         
@@ -542,7 +520,7 @@ if(isset($_POST['btn_send']))
 <!-- Facebook Pixel Code -->
 <!-- End Facebook Pixel Code -->
 
-<script type="text/javascript" src="../../mypham/dadbab.info/content/shared/js/sender.min.js"></script>
+
 <script type=text/javascript>
     (function () {
         // copied from underscorejs
@@ -1048,36 +1026,8 @@ $(function () {
     display: none !important; } }</style><div class="cc_widget" ></div>
 
 
-<script>
-    document.addEventListener('plgload', function () {
-        var stamp = plg.getUID();
-        console.log('stamp: ' + stamp);
-        var source = (getParameterByName('a') === 'cleartest') ? 'cleartest' : 'pat';
-        console.log('source: ' + source);
-        var img = new Image(1, 1);
-        img.src = '../../mypham/xl-trk.com/trackd41d.html?' +
-            'a=' + source +
-            '&b=' + stamp +
-            '&c=' + acrum_extra.type +
-            '&d=' + acrum_extra.offer_id +
-            '&e=' + acrum_extra.id +
-            '&f=' + acrum_extra.esub;
-    });
-</script>
-
-<script>
-	var time = parseInt((new Date()).getTime() / 60000);
-	var src = '../../mypham/cdn.tomono.com/pixel/land.bundle.min77e6.js?time='+time;
-	var script = document.createElement('script');
-	script.src = src; script.async = false;
-	document.head.appendChild(script);
-</script>
-<div class="ac_footer"><span>&copy; 2018 Copyright. All rights reserved.</span><br>
-    <a href="http://dadbab.info/content/shared/html/policy_en.html" target="_blank">Privacy policy</a> | <a href="http://ac-feedback.com/report_form/">Report</a>
-    <p></p>
+<div class="ac_footer"><span>&copy; 2018 Copyright. All rights reserved.</span>    
 </div>
 
 </body>
-
-<!-- Mirrored from vtn.chocoslim.pro/preview/?preland_name=Chocolate_Slim_VN&offer_id=7000 by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Aug 2018 08:46:39 GMT -->
 </html>
